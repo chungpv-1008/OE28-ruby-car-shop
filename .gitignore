@@ -42,6 +42,7 @@ yarn-debug.log*
 /.bundle
 
 /.framgia-ci-reports
+.framgia-ci-result.temp.yml
 
 config/settings.local.yml
 config/settings/*.local.yml
