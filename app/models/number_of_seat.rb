@@ -1,0 +1,2 @@
+class NumberOfSeat < ApplicationRecord
+end
