@@ -29,3 +29,23 @@ vi:
       email: "Nhập địa chỉ email"
       tell_us: "Gửi cho chúng tôi nội dung"
       send_message: "Gửi"
+  users:
+    new:
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      address: "Địa chỉ"
+      phone_number: "Số điện thoại"
+      sign_up_fail: "Đăng ký thất bại"
+      sign_up_success: "Bạn đã đăng ký thành công"
+      confirmation: "Xác nhận mật khẩu"
+  sessions:
+    new:
+      new_user: "Bạn chưa có tài khoản? Đừng lo!"
+      sign_up: "Đăng ký"
+      remember_me: "Nhớ mật khẩu"
+    create:
+      log_in_success: "Chào mừng đã đăng nhập thành công"
+      log_in_fail: "Tên đăng nhập hoặc mật khẩu không đúng"
+    destroy:
+      log_out_success: "Đăng xuất thành công"

@@ -6,7 +6,7 @@ en:
   log_in: "Log in"
   contact_us: "Contact Us"
   news: "News"
-  sign_up: "Sign_up"
+  sign_up: "Sign up"
   layouts:
     header:
       car_list: "Car list"
@@ -29,3 +29,23 @@ en:
       email: "Enter email address"
       tell_us: "Tell us about your message"
       send_message: "Send message"
+  users:
+    new:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      address: "Address"
+      phone_number: "Phone number"
+      sign_up_fail: "Sign up Failed"
+      sign_up_success: "Sign up success"
+      confirmation: "Password confirmation"
+  sessions:
+    new:
+      new_user: "Don't have an account? We can fix that!"
+      sign_up: "Sign up"
+      remember_me: "Remember me"
+    create:
+      log_in_success: "Welcome, Login successful!"
+      log_in_fail: "Invalid email/password combination"
+    destroy:
+      log_out_success: "Log out success"
