@@ -41,8 +41,11 @@ yarn-debug.log*
 
 /.bundle
 
+public/uploads
+
 /.framgia-ci-reports
 .framgia-ci-result.temp.yml
+.framgia-ci-reports/rails_best_practices.html
 
 config/settings.local.yml
 config/settings/*.local.yml

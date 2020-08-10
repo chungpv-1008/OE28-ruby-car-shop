@@ -21,6 +21,10 @@ module SessionsHelper
     end
   end
 
+  def current_user? user
+    user && user == current_user
+  end
+
   def check_remember_me user
     if params[:session][:remember_me] == Settings.check_box
       remember user
@@ -47,5 +51,9 @@ module SessionsHelper
   def redirect_back_or default
     redirect_to session[:forwarding_url] || default
     session.delete :forwarding_url
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end

@@ -30,6 +30,8 @@ vi:
       tell_us: "Gửi cho chúng tôi nội dung"
       send_message: "Gửi"
   users:
+    get_error: "Không thể tìm thấy người dùng."
+    logged_in: "Bạn phải đăng nhập."
     new:
       name: "Tên"
       email: "Email"
@@ -49,3 +51,24 @@ vi:
       log_in_fail: "Tên đăng nhập hoặc mật khẩu không đúng"
     destroy:
       log_out_success: "Đăng xuất thành công"
+  posts:
+    new:
+      create_post: "Tạo mới bài đăng"
+      name: "Tên"
+      content: "Nội dung"
+      gear_box: "Hộp số"
+      car_type: "Loại xe"
+      brand: "Hãng xe"
+      car_model: "Dòng xe"
+      color: "Màu sắc"
+      number_of_seat: "Số ghế ngồi"
+      condition: "Tình trạng"
+      fuel: "Nhiên liệu"
+      origin: "Xuất xứ"
+      price: "Giá tiền"
+      image: "Hình ảnh"
+      year_of_manufacture: "Năm sản xuất"
+      mileage: "Số dặm"
+    create:
+      create_success: "Tạo bài viết thành công"
+      create_failed: "Tạo bài viết thất bại"
