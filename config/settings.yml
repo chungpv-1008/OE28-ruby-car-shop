@@ -1,1 +1,12 @@
 title: "OE28RubyCarShop"
+
+email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+
+user:
+  name_length: 50
+  email_length: 255
+  password_length: 6
+  address: 255
+  phone_number: 10
+
+check_box: 1
