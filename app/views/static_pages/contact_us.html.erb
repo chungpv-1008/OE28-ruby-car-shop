@@ -1,0 +1,27 @@
+<% provide :title, t("contact_us") %>
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <form id="contact-form" role="form" action="" method="post">
+          <div class="section-title">
+            <h2><%= t "contact_us" %> <small><%= t ".we_love" %></small></h2>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <%= text_field_tag :name, "", placeholder: t(".full_name"), required: true, class: "form-control" %>
+            <%= text_field_tag :email, "", placeholder: t(".email"), required: true, class: "form-control" %>
+            <%= text_area_tag :tell_us, "", placeholder: t(".tell_us"), required: true, class: "form-control" %>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <input type="submit" class="form-control" name="send message" value="<%= t ".send_message" %>">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="contact-image">
+          <%= image_tag "contact-1-600x400.jpg", class: "img-responsive"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
