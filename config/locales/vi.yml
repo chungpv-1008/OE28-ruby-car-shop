@@ -7,6 +7,8 @@ vi:
   contact_us: "Liên hệ"
   news: "Tin tức"
   sign_up: "Đăng ký"
+  user: "Người dùng"
+  car_list: "Danh sách xe"
   layouts:
     header:
       car_list: "Danh sách xe"
@@ -41,6 +43,8 @@ vi:
       sign_up_fail: "Đăng ký thất bại"
       sign_up_success: "Bạn đã đăng ký thành công"
       confirmation: "Xác nhận mật khẩu"
+    show:
+      user_info: "Thông tin người dùng"
   sessions:
     new:
       new_user: "Bạn chưa có tài khoản? Đừng lo!"

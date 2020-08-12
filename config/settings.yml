@@ -1,24 +1,20 @@
 title: "OE28RubyCarShop"
-
 email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
-
 user:
   name_length: 50
   email_length: 255
   password_length: 6
   address: 255
   phone_number: 10
-
 post:
   name_length: 255
   content_length: 1000
-
 car:
   price: true
   greater_than: 0
   less_than: 100000
-
 check_box: 1
-
+default_image: "tst-image-1-200x216.jpg"
+page: 2
 image_uploader_width: 200
 image_uploader_height: 200

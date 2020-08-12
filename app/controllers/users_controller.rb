@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   before_action :load_user, :correct_user, only: %i(show edit update)
   before_action :logged_in_user, except: %i(show new create)
 
-  def show; end
+  def show
+    @posts = current_user.posts.page(params[:page]).per Settings.page
+  end
 
   def new
     @user = User.new
