@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_030551) do
+ActiveRecord::Schema.define(version: 2020_08_11_121158) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -82,13 +82,13 @@ ActiveRecord::Schema.define(version: 2020_08_10_030551) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "favourite_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "favorite_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_favourite_lists_on_post_id"
-    t.index ["user_id"], name: "index_favourite_lists_on_user_id"
+    t.index ["post_id"], name: "index_favorite_lists_on_post_id"
+    t.index ["user_id"], name: "index_favorite_lists_on_user_id"
   end
 
   create_table "fuels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_030551) do
     t.string "name"
     t.bigint "user_id", null: false
     t.string "content"
-    t.boolean "activated"
+    t.boolean "activated", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -170,8 +170,8 @@ ActiveRecord::Schema.define(version: 2020_08_10_030551) do
   add_foreign_key "cars", "year_of_manufactures"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "favourite_lists", "posts"
-  add_foreign_key "favourite_lists", "users"
+  add_foreign_key "favorite_lists", "posts"
+  add_foreign_key "favorite_lists", "users"
   add_foreign_key "news", "users"
   add_foreign_key "posts", "users"
 end

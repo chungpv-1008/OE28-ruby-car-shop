@@ -9,4 +9,16 @@ user:
   address: 255
   phone_number: 10
 
+post:
+  name_length: 255
+  content_length: 1000
+
+car:
+  price: true
+  greater_than: 0
+  less_than: 100000
+
 check_box: 1
+
+image_uploader_width: 200
+image_uploader_height: 200

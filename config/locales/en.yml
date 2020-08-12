@@ -30,6 +30,8 @@ en:
       tell_us: "Tell us about your message"
       send_message: "Send message"
   users:
+    get_error: "Can't find user."
+    logged_in: "Please log in."
     new:
       name: "Name"
       email: "Email"
@@ -49,3 +51,24 @@ en:
       log_in_fail: "Invalid email/password combination"
     destroy:
       log_out_success: "Log out success"
+  posts:
+    new:
+      create_post: "Create post"
+      name: "Name"
+      content: "Content"
+      gear_box: "Gearbox"
+      car_type: "Car type"
+      brand: "Brand"
+      car_model: "Car model"
+      color: "Color"
+      number_of_seat: "Number of seats"
+      condition: "Condition"
+      fuel: "Fuel"
+      origin: "Origin"
+      price: "Price"
+      image: "Image"
+      year_of_manufacture: "Year of manufacture"
+      mileage: "Mileage"
+    create:
+      create_success: "Create post successful"
+      create_failed: "Create post failed"
