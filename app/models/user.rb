@@ -6,6 +6,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   has_many :posts, dependent: :destroy
+  has_many :favorite_lists, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.user.name_length}
   validates :email, presence: true,

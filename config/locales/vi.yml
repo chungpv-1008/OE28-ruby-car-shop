@@ -4,9 +4,14 @@ vi:
   home: "Trang chủ"
   about_us: "Về chúng tôi"
   log_in: "Đăng nhập"
+  log_out: "Đăng xuất"
+  profile: "Thông tin"
   contact_us: "Liên hệ"
   news: "Tin tức"
   sign_up: "Đăng ký"
+  user: "Người dùng"
+  car_list: "Danh sách xe"
+  favorite_list: "Danh sách yêu thích"
   layouts:
     header:
       car_list: "Danh sách xe"
@@ -41,6 +46,8 @@ vi:
       sign_up_fail: "Đăng ký thất bại"
       sign_up_success: "Bạn đã đăng ký thành công"
       confirmation: "Xác nhận mật khẩu"
+    show:
+      user_info: "Thông tin người dùng"
   sessions:
     new:
       new_user: "Bạn chưa có tài khoản? Đừng lo!"
@@ -72,3 +79,8 @@ vi:
     create:
       create_success: "Tạo bài viết thành công"
       create_failed: "Tạo bài viết thất bại"
+    show:
+      view_more: "Chi Tiết"
+      description: "Thông tin bài viết"
+      unfavorite: "Ngừng Yêu Thích"
+      favorite: "Yêu Thích"

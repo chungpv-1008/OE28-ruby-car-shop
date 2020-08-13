@@ -4,9 +4,14 @@ en:
   home: "Home"
   about_us: "About Us"
   log_in: "Log in"
+  log_out: "Log out"
+  profile: "Profile"
   contact_us: "Contact Us"
   news: "News"
   sign_up: "Sign up"
+  user: "User"
+  car_list: "Car list"
+  favorite_list: "Favorite list"
   layouts:
     header:
       car_list: "Car list"
@@ -41,6 +46,8 @@ en:
       sign_up_fail: "Sign up Failed"
       sign_up_success: "Sign up success"
       confirmation: "Password confirmation"
+    show:
+      user_info: "User Info"
   sessions:
     new:
       new_user: "Don't have an account? We can fix that!"
@@ -72,3 +79,8 @@ en:
     create:
       create_success: "Create post successful"
       create_failed: "Create post failed"
+    show:
+      view_more: "View More"
+      description: "Description"
+      unfavorite: "Unfavorite"
+      favorite: "Favorite"

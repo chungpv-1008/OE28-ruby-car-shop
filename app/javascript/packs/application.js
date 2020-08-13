@@ -7,3 +7,5 @@ require('bootstrap')
 require('./owl.carousel.min')
 require('./smoothscroll')
 require('./custom')
+require('./favorite_lists/favorite_lists')
+window.$ = window.jQuery = require("jquery");
