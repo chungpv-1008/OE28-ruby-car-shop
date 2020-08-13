@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: %i(show new create)
 
-  def index; end
+  def index
+    @posts = Post.page(params[:page]).per Settings.page
+  end
 
   def show; end
 

@@ -1,13 +1,18 @@
+<section>
+  <div class="container">
+    <div class="text-center">
+      <h1><%= t "car_list" %></h1>
+    </div>
+  </div>
+</section>
 <section class="section-background">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 pull-right col-xs-12">
-        <%= render current_user %>
+      <div class="col-lg-3 col-xs-12">
       </div>
       <div class="col-lg-9 col-xs-12">
         <div class="row">
-          <%= render @posts %>
-        </div>
+        <%= render @posts %>
         <%= paginate @posts %>
       </div>
     </div>
