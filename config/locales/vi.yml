@@ -4,11 +4,14 @@ vi:
   home: "Trang chủ"
   about_us: "Về chúng tôi"
   log_in: "Đăng nhập"
+  log_out: "Đăng xuất"
+  profile: "Thông tin"
   contact_us: "Liên hệ"
   news: "Tin tức"
   sign_up: "Đăng ký"
   user: "Người dùng"
   car_list: "Danh sách xe"
+  favorite_list: "Danh sách yêu thích"
   layouts:
     header:
       car_list: "Danh sách xe"
@@ -76,3 +79,8 @@ vi:
     create:
       create_success: "Tạo bài viết thành công"
       create_failed: "Tạo bài viết thất bại"
+    show:
+      view_more: "Chi Tiết"
+      description: "Thông tin bài viết"
+      unfavorite: "Ngừng Yêu Thích"
+      favorite: "Yêu Thích"

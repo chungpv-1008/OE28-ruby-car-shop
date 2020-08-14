@@ -4,11 +4,14 @@ en:
   home: "Home"
   about_us: "About Us"
   log_in: "Log in"
+  log_out: "Log out"
+  profile: "Profile"
   contact_us: "Contact Us"
   news: "News"
   sign_up: "Sign up"
   user: "User"
   car_list: "Car list"
+  favorite_list: "Favorite list"
   layouts:
     header:
       car_list: "Car list"
@@ -77,4 +80,7 @@ en:
       create_success: "Create post successful"
       create_failed: "Create post failed"
     show:
-      user_info: "User info"
+      view_more: "View More"
+      description: "Description"
+      unfavorite: "Unfavorite"
+      favorite: "Favorite"

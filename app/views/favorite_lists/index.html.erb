@@ -1,0 +1,15 @@
+<section class="section-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 pull-right col-xs-12">
+        <%= render current_user %>
+      </div>
+      <div class="col-lg-9 col-xs-12">
+        <div class="row">
+          <%= render @posts %>
+        </div>
+        <%= paginate @posts %>
+      </div>
+    </div>
+  </div>
+</section>

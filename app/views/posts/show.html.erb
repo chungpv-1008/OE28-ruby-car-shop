@@ -1,0 +1,109 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <div>
+          <%= image_tag @post.car_image.url, class: "img-responsive"  %>
+        </div>
+        <br>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <h2><%= @post.name %></h2>
+        <p class="lead"><strong class="text-primary"><%= @post.car_price %></strong></p>
+        <%= hidden_field_tag :post_id, @post.id, id: "post_id" %>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.year_of_manufacture" %></span>
+              <br>
+              <strong><%= @post.car_year_of_manufacture_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.gear_box" %></span>
+              <br>
+              <strong><%= @post.car_gearbox_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.origin" %></span>
+              <br>
+              <strong><%= @post.car_origin_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.car_type" %></span>
+              <br>
+              <strong><%= @post.car_car_type_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.brand" %></span>
+              <br>
+              <strong><%= @post.car_brand_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.car_model" %></span>
+              <br>
+              <strong><%= @post.car_car_model_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.color" %></span>
+              <br>
+              <strong><%= @post.car_color_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.number_of_seat" %></span>
+              <br>
+              <strong><%= @post.car_number_of_seat_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.condition" %></span>
+              <br>
+              <strong><%= @post.car_condition_name %></strong>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.fuel" %></span>
+              <br>
+              <strong><%= @post.car_fuel_name %></strong>
+            </p>
+          </div>
+        </div>
+        <% if logged_in? %>
+          <div class="col-md-5">
+            <%= button_tag favorite_list_text, id: "favorite_list_link", class: "section-btn btn btn-primary btn-block" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><%= t ".description" %></h4>
+          </div>
+          <div class="panel-body">
+            <p><%= @post.content %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-12">
+        <%= render @post.user %>
+      </div>
+    </div>
+  </div>
+</section>

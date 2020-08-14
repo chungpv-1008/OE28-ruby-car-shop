@@ -6,6 +6,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_one :car, dependent: :destroy
+  has_many :favorite_lists, dependent: :destroy
 
   accepts_nested_attributes_for :car, allow_destroy: true
 
@@ -14,9 +15,13 @@ class Post < ApplicationRecord
     {maximum: Settings.post.content_length}
   validates_associated :car
 
+  scope :by_user_id, ->(user_id){where user_id: user_id}
+  scope :by_post_id, ->(post_id){where post_id: post_id}
+  scope :by_ids, ->(ids){where id: ids}
+
   delegate :name, to: :user, prefix: true
-  delegate :image, :year_of_manufacture_name, :gearbox_name, :origin_name,
-           :car_type_name, :brand_name, :car_model_name, :color_name,
-           :number_of_seat_name, :condition_name, :fuel_name, to: :car,
-            prefix: true
+  delegate :price, :image, :year_of_manufacture_name, :gearbox_name,
+           :origin_name, :car_type_name, :brand_name, :car_model_name,
+           :color_name, :number_of_seat_name, :condition_name, :fuel_name,
+           to: :car, prefix: true
 end

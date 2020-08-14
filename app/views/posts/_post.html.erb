@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="courses-detail">
-      <h3><a href="car-details.html"><%= post.name %></a></h3>
+      <h3><%= link_to post.name, post_path(post.id) %></h3>
       <p class="lead"><strong><%= post.car_price %></strong></p>
       <p><%= post.car_year_of_manufacture_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
         <%= post.car_fuel_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
@@ -19,7 +19,7 @@
         <%= post.car_condition_name %></p>
     </div>
     <div class="courses-info">
-      <a href="car-details.html" class="section-btn btn btn-primary btn-block"><%= t "post.view_more" %></a>
+      <%= link_to t(".view_more"), post_path(post.id),class: "section-btn btn btn-primary btn-block" %>
     </div>
   </div>
 </div>
