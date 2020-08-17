@@ -1,0 +1,77 @@
+<%= form_tag car_list_path, method: :get do %>
+  <div class="form-group">
+    <label><%= t "posts.new.year_of_manufacture" %>:</label>
+    <%= select_tag :year_of_manufacture_id,
+      options_for_select(load_dropdown(YearOfManufacture),
+        selected: params[:year_of_manufacture_id]),
+          {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.gear_box" %>:</label>
+    <%= select_tag :gearbox_id,
+      options_for_select(load_dropdown(Gearbox), selected: params[:gearbox_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.car_type" %>:</label>
+    <%= select_tag :brand_id,
+      options_for_select(load_dropdown(CarType), selected: params[:brand_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.brand" %>:</label>
+    <%= select_tag :brand_id,
+      options_for_select(load_dropdown(Brand), selected: params[:brand_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.car_model" %>:</label>
+    <%= select_tag :car_model_id,
+      options_for_select(load_dropdown(CarModel),
+        selected: params[:car_model_id]),
+          {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.color" %>:</label>
+    <%= select_tag :color_id,
+      options_for_select(load_dropdown(Color), selected: params[:color_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.number_of_seat" %>:</label>
+    <%= select_tag :number_of_seat_id,
+      options_for_select(load_dropdown(NumberOfSeat),
+        selected: params[:number_of_seat_id]),
+          {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.condition" %>:</label>
+    <%= select_tag :condition_id,
+      options_for_select(load_dropdown(Condition),
+        selected: params[:condition_id]),
+          {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.fuel" %>:</label>
+    <%= select_tag :fuel_id,
+      options_for_select(load_dropdown(Fuel), selected: params[:fuel_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <div class="form-group">
+    <label><%= t "posts.new.origin" %>:</label>
+    <%= select_tag :origin_id,
+      options_for_select(load_dropdown(Origin), selected: params[:origin_id]),
+        {include_blank: true, class: "form-control"}
+    %>
+  </div>
+  <%= submit_tag t("search"), class: "section-btn btn btn-primary btn-block" %>
+<% end %>
