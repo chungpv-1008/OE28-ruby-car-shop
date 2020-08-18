@@ -1,6 +1,8 @@
 <%= f.fields_for :car do |c| %>
   <%= c.label :image, t("posts.new.image") %>
-  <%= c.file_field :image, class: "form-control" %>
+  <%= c.file_field :image, accept: Settings.accepted_type_image, class: "form-control" %>
+  <%= c.hidden_field :image_cache %>
+  <%= image_tag(@post.car_image.url, size: Settings.image_size, class: "img-responsive") if @post.car_image.url %>
   <%= c.label :year_of_manufacture_id, t("posts.new.year_of_manufacture") %>
   <%= c.select(:year_of_manufacture_id, options_for_select(load_dropdown(YearOfManufacture)), {}, class: "form-control" )%>
   <%= c.label :gearbox_id, t("posts.new.gear_box") %>

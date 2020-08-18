@@ -1,12 +1,12 @@
-<%= form_for post do |f| %>
-  <%= render "shared/error_messages", object: post %>
+<%= form_for @post do |f| %>
+  <%= render "shared/error_messages", object: @post %>
   <%= f.label :name, t("posts.new.name") %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.label :content, t("posts.new.content") %>
   <%= f.text_area :content, class: "form-control" %>
   <%= render "car_form", f: f %>
   <div class="courses-info">
-    <%= f.submit t("posts.new.create_post"), class: "section-btn btn
+    <%= f.submit yield(:button_text), class: "section-btn btn
       btn-primary btn-block" %>
   </div>
 <% end %>

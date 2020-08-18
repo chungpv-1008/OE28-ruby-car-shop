@@ -9,7 +9,11 @@
       </div>
       <div class="col-md-6 col-xs-12">
         <h2><%= @post.name %></h2>
-        <p class="lead"><strong class="text-primary"><%= @post.car_price %></strong></p>
+        <p class="lead">
+          <strong class="text-primary">
+            <%= number_to_price @post.car_price %>
+            </strong>
+          </p>
         <%= hidden_field_tag :post_id, @post.id, id: "post_id" %>
         <div class="row">
           <div class="col-md-4 col-sm-6">
@@ -82,28 +86,51 @@
               <strong><%= @post.car_fuel_name %></strong>
             </p>
           </div>
+          <div class="col-md-4 col-sm-6">
+            <p>
+              <span><%= t "posts.new.mileage" %></span>
+              <br>
+              <strong><%= @post.car_mileage %></strong>
+            </p>
+          </div>
         </div>
         <% if logged_in? %>
           <div class="col-md-5">
-            <%= button_tag favorite_list_text, id: "favorite_list_link", class: "section-btn btn btn-primary btn-block" %>
+            <%= button_tag id: "favorite_list_link", class: "section-btn btn btn-primary btn-block" do %>
+              <i class="fa fa-heart"></i> <%= favorite_list_text %>
+            <% end %>
+          </div>
+          <% if current_user? @post.user %>
+            <div class="col-md-3">
+              <%= link_to edit_post_path(@post.id), class: "section-btn btn btn-primary btn-block" do %>
+                <i class="fa fa-pencil-square-o"></i> <%= t "edit" %>
+              <% end %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to @post, method: :delete, data: { confirm: t ".you_sure" }, class: "section-btn btn btn-primary btn-block" do %>
+                <i class="fa fa-trash-o"></i> <%= t "delete" %>
+              <% end %>
+            <% end %>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-8 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4><%= t ".description" %></h4>
-          </div>
-          <div class="panel-body">
-            <p><%= @post.content %></p>
+    <section>
+      <div class="row">
+        <div class="col-lg-8 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><%= t ".description" %></h4>
+            </div>
+            <div class="panel-body">
+              <p><%= @post.content %></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-xs-12">
-        <%= render @post.user %>
+        <div class="col-lg-4 col-xs-12">
+          <%= render @post.user %>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </section>

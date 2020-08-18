@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     post "favorite_lists/update"
 
     resources :favorite_lists, only: %i(show update index)
-    resources :posts, except: %i(edit update destroy)
+    resources :posts
     resources :users, only: %i(show new create)
   end
 end

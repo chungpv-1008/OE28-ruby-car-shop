@@ -12,14 +12,14 @@
     </div>
     <div class="courses-detail">
       <h3><%= link_to post.name, post_path(post.id) %></h3>
-      <p class="lead"><strong><%= post.car_price %></strong></p>
+      <p class="lead"><strong><%= number_to_price post.car_price %></strong></p>
       <p><%= post.car_year_of_manufacture_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
         <%= post.car_fuel_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
-        <%= post.car_year_of_manufacture_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
+        <%= post.car_brand_name %> &nbsp;&nbsp;/&nbsp;&nbsp;
         <%= post.car_condition_name %></p>
     </div>
     <div class="courses-info">
-      <%= link_to t(".view_more"), post_path(post.id),class: "section-btn btn btn-primary btn-block" %>
+      <%= link_to t("posts.show.view_more"), post_path(post.id), class: "section-btn btn btn-primary btn-block" %>
     </div>
   </div>
 </div>
