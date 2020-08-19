@@ -6,6 +6,7 @@ $(document).on('turbolinks:load', function() {
       method: 'POST',
       dataType: 'json',
       url: url,
+      dataType: 'script',
       data: {
         post_id: post_id,
       }

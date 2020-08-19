@@ -12,8 +12,8 @@
         <p class="lead">
           <strong class="text-primary">
             <%= number_to_price @post.car_price %>
-            </strong>
-          </p>
+          </strong>
+        </p>
         <%= hidden_field_tag :post_id, @post.id, id: "post_id" %>
         <div class="row">
           <div class="col-md-4 col-sm-6">
@@ -94,25 +94,27 @@
             </p>
           </div>
         </div>
-        <% if logged_in? %>
-          <div class="col-md-5">
-            <%= button_tag id: "favorite_list_link", class: "section-btn btn btn-primary btn-block" do %>
-              <i class="fa fa-heart"></i> <%= favorite_list_text %>
-            <% end %>
-          </div>
-          <% if current_user? @post.user %>
-            <div class="col-md-3">
-              <%= link_to edit_post_path(@post.id), class: "section-btn btn btn-primary btn-block" do %>
-                <i class="fa fa-pencil-square-o"></i> <%= t "edit" %>
+        <section>
+          <% if logged_in? %>
+            <div class="col-md-5">
+              <%= button_tag id: "favorite_list_link", class: "section-btn btn btn-primary btn-block" do %>
+                <i class="fa fa-heart"></i> <%= favorite_list_text %>
               <% end %>
             </div>
-            <div class="col-md-3">
-              <%= link_to @post, method: :delete, data: { confirm: t ".you_sure" }, class: "section-btn btn btn-primary btn-block" do %>
-                <i class="fa fa-trash-o"></i> <%= t "delete" %>
-              <% end %>
+            <% if current_user? @post.user %>
+              <div class="col-md-3">
+                <%= link_to edit_post_path(@post.id), class: "section-btn btn btn-primary btn-block" do %>
+                  <i class="fa fa-pencil-square-o"></i> <%= t "edit" %>
+                <% end %>
+              </div>
+              <div class="col-md-3">
+                <%= link_to @post, method: :delete, data: { confirm: t(".you_sure") }, class: "section-btn btn btn-primary btn-block" do %>
+                  <i class="fa fa-trash-o"></i> <%= t "delete" %>
+                <% end %>
+              </div>
             <% end %>
-          </div>
-        <% end %>
+          <% end %>
+        </section>
       </div>
     </div>
     <section>

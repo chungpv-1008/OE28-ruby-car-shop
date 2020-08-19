@@ -1,0 +1,16 @@
+<% provide :title, t("edit_post") %>
+<% provide :button_text, t("posts.new.save_changes") %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4"><%= yield(:title) %></h1>
+      <div class="card mb-4">
+      </div>
+      <div class="card mb-4">
+        <div class="card-body-form">
+          <%= render "form" %>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

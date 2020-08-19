@@ -1,0 +1,11 @@
+require('@rails/ujs').start()
+require('turbolinks').start()
+require('@rails/activestorage').start()
+require('channels')
+require('jquery')
+require('packs/admins/scripts')
+window.$ = window.jQuery = require("jquery");
+require('packs/admins/all.min')
+require('packs/admins/bootstrap.bundle.min')
+require('packs/admins/scripts')
+require('packs/admins/jquery.dataTables.min')
