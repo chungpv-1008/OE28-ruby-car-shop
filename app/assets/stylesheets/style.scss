@@ -1034,3 +1034,20 @@ section .item, section .courses-thumb, section .team-thumb, .section-background,
 .alert {
   margin-bottom: 0;
 }
+
+.comment {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.comment span, strong {
+  font-size: 18px;
+}
+
+.comment span {
+  margin-left: 5px;
+}
+
+.comment small{
+  font-size: 14px;
+}

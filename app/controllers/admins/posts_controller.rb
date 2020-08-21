@@ -4,7 +4,7 @@ class Admins::PostsController < AdminsController
   before_action :load_post, only: %i(update edit destroy)
 
   def index
-    @posts = load_posts.page(params[:page]).per Settings.page
+    @posts = load_posts.by_created_at.page(params[:page]).per Settings.page_ad
   end
 
   def show; end

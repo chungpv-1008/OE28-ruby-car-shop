@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     resources :favorite_lists, only: %i(show update index)
     resources :posts
     resources :users, only: %i(show new create)
+    resources :posts do
+      resources :comments, only: %i(new create destroy)
+    end
+    resources :comments, only: %i(new create destroy) do
+      resources :comments, only: %i(new create destroy)
+    end
 
     namespace :admins do
       root "posts#index"

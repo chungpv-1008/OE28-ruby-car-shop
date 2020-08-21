@@ -28,3 +28,4 @@ sub_zero: /^0+/, ""
 date_time_format: "%F %T"
 image_size_admin: 120
 home_limit: 6
+page_ad: 10

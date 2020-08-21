@@ -1,0 +1,19 @@
+<div class="row comment">
+  <%= image_tag Settings.default_image, size: 50 %>
+  <strong><%= comment.user_name %></strong>
+  <span><%= comment.content %></span> -
+  <small><%= t "comments.submitted" %> <%= time_ago_in_words comment.created_at %> <%= t "comments.ago" %></small>
+</div>
+<%= form_for [comment, Comment.new] do |f| %>
+  <%= f.text_area :content, placeholder: t("comments.add_a_comment"), class: "form-control" %><br/>
+  <%= f.submit t("comments.reply"), class: "btn btn-primary"  %>
+  <% if current_user.admin? || @post.user.eql?(current_user) || comment.user.eql?(current_user) %>
+    <%= link_to comment, method: :delete, data: { confirm: t("comments.you_sure") }, class: "btn btn-primary" do %>
+      <i class="fa fa-trash-o"></i> <%= t "delete" %>
+    <% end %>
+  <% end %>
+<% end %>
+<br>
+<ul>
+  <%= render partial: "comments/comment", collection: comment.comments %>
+</ul>
