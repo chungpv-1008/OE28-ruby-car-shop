@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
-  POST_PARAMS = [:name, :content, car_attributes: [:year_of_manufacture_id,
-    :origin_id, :gearbox_id, :car_type_id, :brand_id, :car_model_id, :color_id,
-    :number_of_seat_id, :condition_id, :fuel_id, :image, :price,
-    :mileage]].freeze
+  POST_PARAMS = [:name, :content, :activated, car_attributes:
+    [:year_of_manufacture_id, :origin_id, :gearbox_id, :car_type_id, :brand_id,
+      :car_model_id, :color_id, :number_of_seat_id, :condition_id, :fuel_id,
+        :image, :price, :mileage]].freeze
 
   belongs_to :user
   has_one :car, dependent: :destroy
@@ -66,6 +66,10 @@ class Post < ApplicationRecord
   end)
 
   scope :include_car, ->{includes :car}
+
+  scope :by_created_at, ->{order created_at: :desc}
+
+  scope :by_activated, ->{where activated: true}
 
   delegate :name, to: :user, prefix: true
   delegate :price, :image, :year_of_manufacture_name, :gearbox_name,

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "static_pages#home"
+    root "home#index"
 
     get "/about-us", to: "static_pages#about_us"
     get "/contact-us", to: "static_pages#contact_us"
@@ -15,5 +15,10 @@ Rails.application.routes.draw do
     resources :favorite_lists, only: %i(show update index)
     resources :posts
     resources :users, only: %i(show new create)
+
+    namespace :admins do
+      root "posts#index"
+      resources :posts
+    end
   end
 end

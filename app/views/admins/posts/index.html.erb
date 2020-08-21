@@ -1,0 +1,37 @@
+<% provide :title, t("admins.manage_posts") %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4 mb-4"><%= yield(:title) %></h1>
+      <div class="col-md-3 mb-4">
+        <%= link_to new_admins_post_path, class: "section-btn btn btn-primary btn-block" do %>
+          <i class="fa fa-plus-circle"></i> <%= t("posts.new.create_post") %>
+        <% end %>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th><%= t("posts.new.name") %></th>
+                  <th><%= t("posts.new.image") %></th>
+                  <th><%= t("posts.new.year_of_manufacture") %></th>
+                  <th><%= t("posts.new.car_type") %></th>
+                  <th><%= t("created_at") %></th>
+                  <th><%= t("posts.new.price") %></th>
+                  <th><%= t("posts.new.status") %></th>
+                  <th colspan="2"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @posts %>
+                <%= paginate @posts %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

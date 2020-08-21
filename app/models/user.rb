@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :favorite_lists, dependent: :destroy
 
+  enum role: {user: 0, admin: 1}
+
   validates :name, presence: true, length: {maximum: Settings.user.name_length}
   validates :email, presence: true,
     length: {maximum: Settings.user.email_length},

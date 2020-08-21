@@ -15,6 +15,10 @@ vi:
   edit: "Sửa"
   delete: "Xoá"
   search: "Tìm kiếm"
+  admin_side: "Trang Admin"
+  created_at: "Ngày tạo"
+  edit_post: "Cập nhật bài đăng"
+  please_log_in: "Bạn phải đăng nhập!"
   layouts:
     header:
       car_list: "Danh sách xe"
@@ -82,6 +86,7 @@ vi:
       mileage: "Số dặm"
       save_changes: "Lưu"
       create: "Tạo mới"
+      status: "Trạng thái"
     create:
       create_success: "Tạo bài viết thành công"
       create_failed: "Tạo bài viết thất bại"
@@ -98,3 +103,10 @@ vi:
     destroy:
       delete_success: "Xoá bài viết thành công"
       delete_failed: "Xoá bài viết thất bại"
+  admins:
+    manage_posts: "Quản lý bài đăng"
+    you_sure: "Bạn có chắc xoá?"
+    active: "Kích hoạt"
+    inactive: "Chưa kích hoạt"
+    not_admin: "Bạn không phải là admin."
+    manage: "Quản lý"

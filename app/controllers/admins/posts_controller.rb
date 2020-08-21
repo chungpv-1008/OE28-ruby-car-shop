@@ -1,18 +1,13 @@
-class PostsController < ApplicationController
+class Admins::PostsController < AdminsController
   before_action :logged_in_user, only: %i(new create destroy)
   before_action :load_posts, only: :index
-  before_action :load_post, only: %i(show update edit)
-  before_action :correct_user, only: %i(update edit destroy)
-  before_action :check_activated?, only: :show
+  before_action :load_post, only: %i(update edit destroy)
 
   def index
-    @posts = load_posts.by_activated.page(params[:page]).per Settings.page
+    @posts = load_posts.page(params[:page]).per Settings.page
   end
 
-  def show
-    @favorite_list_exists = FavoriteList.by_user_id(current_user)
-      .by_post_id(@post.id).present?
-  end
+  def show; end
 
   def new
     @post = Post.new
@@ -23,7 +18,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build post_params
     if @post.save
       flash[:success] = t ".create_success"
-      redirect_to @post
+      redirect_to admins_posts_path
     else
       flash[:danger] = t ".create_failed"
       render :new
@@ -35,10 +30,10 @@ class PostsController < ApplicationController
   def update
     if @post.update post_params
       flash[:success] = t ".update_success"
-      redirect_to @post
+      redirect_to admins_posts_path
     else
       flash[:danger] = t ".update_fail"
-      render :edit
+      render "admins/posts/edit"
     end
   end
 
@@ -48,7 +43,7 @@ class PostsController < ApplicationController
     else
       flash[:danger] = t ".delete_failed"
     end
-    redirect_back_or @post.user
+    redirect_to admins_root_path
   end
 
   private
@@ -62,22 +57,6 @@ class PostsController < ApplicationController
     return if @post
 
     flash[:danger] = t "posts.not_found_post"
-    redirect_to car_list_path
-  end
-
-  def correct_user
-    @post = current_user.posts.find_by id: params[:id]
-    return if @post
-
-    flash[:danger] = t "posts.not_found_post"
-    redirect_to car_list_path
-  end
-
-  def check_activated?
-    @post = Post.by_activated.find_by(id: params[:id])
-    return if @post
-
-    flash[:danger] = t "posts.not_found_post"
-    redirect_to car_list_path
+    redirect_to admins_root_path
   end
 end
