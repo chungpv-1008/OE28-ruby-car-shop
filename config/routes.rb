@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
     namespace :admins do
       root "posts#index"
+      post "posts/change_activated"
       resources :posts
     end
   end

@@ -31,15 +31,15 @@ class ApplicationController < ActionController::Base
 
   def load_posts
     @posts = Post.by_year_of_manufacture(params[:year_of_manufacture_id])
-      .by_fuel(params[:fuel_id])
-      .by_gearbox(params[:gearbox_id])
-      .by_car_type(params[:car_type_id])
-      .by_origin(params[:origin_id])
-      .by_brand(params[:brand_id])
-      .by_car_model(params[:car_model_id])
-      .by_color(params[:color_id])
-      .by_number_of_seat(params[:number_of_seat_id])
-      .by_condition(params[:condition_id])
-      .include_car
+                 .by_fuel(params[:fuel_id])
+                 .by_gearbox(params[:gearbox_id])
+                 .by_car_type(params[:car_type_id])
+                 .by_origin(params[:origin_id])
+                 .by_brand(params[:brand_id])
+                 .by_car_model(params[:car_model_id])
+                 .by_color(params[:color_id])
+                 .by_number_of_seat(params[:number_of_seat_id])
+                 .by_condition(params[:condition_id])
+                 .include_car
   end
 end

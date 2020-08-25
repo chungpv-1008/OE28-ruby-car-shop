@@ -22,6 +22,7 @@ class FavoriteListsController < ApplicationController
       favorite_list.destroy
       @favorite_list_exists = false
     end
+    @favorite_count = FavoriteList.by_post_id(params[:post_id]).size
     respond_to do |format|
       format.js
     end

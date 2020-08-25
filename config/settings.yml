@@ -15,7 +15,7 @@ car:
   less_than: 100000
 check_box: 1
 default_image: "tst-image-1-200x216.jpg"
-page: 2
+page: 6
 image_uploader_width: 400
 image_uploader_height: 300
 image_size: 500

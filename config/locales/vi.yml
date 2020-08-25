@@ -21,6 +21,7 @@ vi:
   please_log_in: "Bạn phải đăng nhập!"
   language: "Ngôn ngữ"
   featured_cars: "Bài đăng mới"
+  top_favorite: "Bài đăng được yêu thích trong tháng"
   layouts:
     header:
       car_list: "Danh sách xe"
