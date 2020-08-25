@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :check_activated?, only: :show
 
   def index
-    @posts = load_posts.by_activated.page(params[:page]).per Settings.page
+    @posts = load_posts.by_activated.by_updated_at.page(params[:page]).per Settings.page
   end
 
   def show
@@ -74,7 +74,8 @@ class PostsController < ApplicationController
   end
 
   def check_activated?
-    @post = Post.by_activated.find_by(id: params[:id])
+    @post = Post.by_activated.find_by(id: params[:id]) ||
+      current_user.posts.find_by(id: params[:id])
     return if @post
 
     flash[:danger] = t "posts.not_found_post"

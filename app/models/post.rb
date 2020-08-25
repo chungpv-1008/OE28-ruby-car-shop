@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one :car, dependent: :destroy
   has_many :favorite_lists, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   accepts_nested_attributes_for :car, allow_destroy: true, update_only: true
 
@@ -68,6 +69,8 @@ class Post < ApplicationRecord
   scope :include_car, ->{includes :car}
 
   scope :by_created_at, ->{order created_at: :desc}
+
+  scope :by_updated_at, ->{order updated_at: :desc}
 
   scope :by_activated, ->{where activated: true}
 

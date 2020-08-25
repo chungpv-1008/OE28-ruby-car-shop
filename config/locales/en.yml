@@ -19,6 +19,8 @@ en:
   created_at: "Created at"
   edit_post: "Edit Post"
   please_log_in: "Please log in!"
+  language: "Language"
+  featured_cars: "Featured Car"
   layouts:
     header:
       car_list: "Car list"
@@ -80,10 +82,10 @@ en:
       condition: "Condition"
       fuel: "Fuel"
       origin: "Origin"
-      price: "Price"
+      price: "Price(millions)"
       image: "Image"
       year_of_manufacture: "Year of manufacture"
-      mileage: "Mileage"
+      mileage: "Mileage(km)"
       save_changes: "Save changes"
       create: "Create"
       status: "Status"
@@ -103,6 +105,20 @@ en:
     destroy:
       delete_success: "Post deleted"
       delete_failed: "Post delete failed"
+    edit:
+      edit_post: "Edit Post"
+  comments:
+    reply: "Reply"
+    add_comment: "Add Comment"
+    comments: "Comments"
+    add_a_comment: "Add a comment"
+    submitted: "Submitted"
+    ago: "ago"
+    comment_success: "Your comment was successfully posted!"
+    comment_failed: "Your comment wasn't posted!"
+    you_sure: "You sure?"
+    delete_success: "Delete comment successful"
+    delete_failed: "Delete comment failed"
   admins:
     manage_posts: "Manage Posts"
     you_sure: "You sure?"

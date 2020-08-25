@@ -10,7 +10,7 @@ module Posts::PostsHelper
       (price / Settings.second_price_limit).to_s + Settings.first_price
     else
       (price / Settings.second_price_limit).to_s + Settings.first_price +
-        price.to_s.last(Settings.second_price_limit).sub(/^0+/, "") +
+        price.to_s.last(Settings.second_price_count).sub(/^0+/, "") +
         Settings.second_price
     end
   end

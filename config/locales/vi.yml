@@ -19,6 +19,8 @@ vi:
   created_at: "Ngày tạo"
   edit_post: "Cập nhật bài đăng"
   please_log_in: "Bạn phải đăng nhập!"
+  language: "Ngôn ngữ"
+  featured_cars: "Bài đăng mới"
   layouts:
     header:
       car_list: "Danh sách xe"
@@ -80,10 +82,10 @@ vi:
       condition: "Tình trạng"
       fuel: "Nhiên liệu"
       origin: "Xuất xứ"
-      price: "Giá tiền"
+      price: "Giá tiền(triệu đồng)"
       image: "Hình ảnh"
       year_of_manufacture: "Năm sản xuất"
-      mileage: "Số dặm"
+      mileage: "Số dặm(km)"
       save_changes: "Lưu"
       create: "Tạo mới"
       status: "Trạng thái"
@@ -103,6 +105,20 @@ vi:
     destroy:
       delete_success: "Xoá bài viết thành công"
       delete_failed: "Xoá bài viết thất bại"
+    edit:
+      edit_post: "Cập nhật bài viết"
+  comments:
+    reply: "Trả lời"
+    add_comment: "Bình luận"
+    comments: "Bình luận"
+    add_a_comment: "Nhập bình luận"
+    submitted: "Đăng"
+    ago: "trước"
+    comment_success: "Bình luận thành công!"
+    comment_failed: "Bình luận thất bại!"
+    you_sure: "Bạn chắc muốn xoá?"
+    delete_success: "Xoá bình luận thành công"
+    delete_failed: "Xoá bình luận thất bại"
   admins:
     manage_posts: "Quản lý bài đăng"
     you_sure: "Bạn có chắc xoá?"

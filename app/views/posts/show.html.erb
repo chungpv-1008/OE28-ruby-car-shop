@@ -127,6 +127,17 @@
             <div class="panel-body">
               <p><%= @post.content %></p>
             </div>
+            <div class="panel-body">
+              <h3><%= t "comments.comments" %></h3>
+              <%= form_for [@post, Comment.new] do |f| %>
+                <%= f.text_area :content, placeholder: t("comments.add_a_comment"), class: "form-control" %><br>
+                <%= f.submit t("comments.comments"), class: "btn btn-primary" %>
+              <% end %>
+              <br>
+              <ul>
+                <%= render partial: "comments/comment", collection: @post.comments %>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="col-lg-4 col-xs-12">

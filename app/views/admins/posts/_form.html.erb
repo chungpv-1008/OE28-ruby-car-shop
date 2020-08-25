@@ -1,9 +1,9 @@
 <%= form_for [:admins, @post] do |f| %>
   <%= render "shared/error_messages", object: @post %>
   <%= f.label :name, t("posts.new.name") %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, class: "form-control", required: true %>
   <%= f.label :content, t("posts.new.content") %>
-  <%= f.text_area :content, class: "form-control" %>
+  <%= f.text_area :content, class: "form-control", required: true %>
   <%= render "/posts/car_form", f: f %>
   <%= f.label :activated, t("posts.new.status") %>
   <%= f.select(:activated, [[t("admins.active"), true], [t("admins.inactive"), false]], {}, class: "form-control" )%>

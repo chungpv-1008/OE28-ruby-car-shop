@@ -11,12 +11,6 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def favorite_list_text
-    @favorite_list_exists ? t(".unfavorite") : t(".favorite")
-  end
-
-  helper_method :favorite_list_text
-
   private
 
   def logged_in_user
