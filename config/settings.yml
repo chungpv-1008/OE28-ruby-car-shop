@@ -29,3 +29,5 @@ date_time_format: "%F %T"
 image_size_admin: 120
 home_limit: 6
 page_ad: 10
+sort_option: [[<%= I18n.t("lower_price") %>, 1],
+              [<%= I18n.t("higher_price") %>, 2]]

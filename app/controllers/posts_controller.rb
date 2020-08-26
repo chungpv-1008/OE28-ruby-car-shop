@@ -7,12 +7,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = load_posts.by_activated.by_updated_at
-                       .page(params[:page]).per Settings.page
+    .page(params[:page]).per Settings.page
   end
 
   def show
     @favorite_list_exists = FavoriteList.by_user_id(current_user)
-                                        .by_post_id(@post.id).present?
+    .by_post_id(@post.id).present?
     @favorite_count = FavoriteList.by_post_id(@post.id).size
   end
 
@@ -53,6 +53,12 @@ class PostsController < ApplicationController
     redirect_back_or @post.user
   end
 
+  def update_index
+    @posts = params[:sort_id].to_i == 1 ? load_posts.order_by_lower_price : load_posts.order_by_higher_price
+    @posts = @posts.by_activated.page(params[:page]).per Settings.page
+    respond_to :js
+  end
+
   private
 
   def post_params
@@ -77,7 +83,7 @@ class PostsController < ApplicationController
 
   def check_activated?
     @post = Post.by_activated.find_by(id: params[:id]) ||
-            current_user.posts.find_by(id: params[:id])
+      current_user.posts.find_by(id: params[:id])
     return if @post
 
     flash[:danger] = t "posts.not_found_post"

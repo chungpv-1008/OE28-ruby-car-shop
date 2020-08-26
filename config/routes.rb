@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout",  to: "sessions#destroy"
     post "favorite_lists/update"
+    post "posts/update_index"
 
     resources :favorite_lists, only: %i(show update index)
     resources :posts

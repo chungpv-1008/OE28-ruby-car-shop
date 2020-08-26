@@ -22,6 +22,8 @@ en:
   language: "Language"
   featured_cars: "Featured Car"
   top_favorite: "Top Favorite Car This Month"
+  lower_price: "By lower price"
+  higher_price: "By higher price"
   layouts:
     header:
       car_list: "Car list"

@@ -1,0 +1,7 @@
+<% if @commentable.instance_of?(Post) %>
+  $('#comment-panel').html('<%= j render partial: "comments/comment", collection: @commentable.comments.by_created_at %>');
+  $('#comment-text').val('');
+<% else %>
+  $('#comment-panel-<%= @commentable.id %>').prepend('<%= j render partial: "comments/comment", collection: @commentable.comments.by_created_at %>');
+  $('#comment-text-<%= @commentable.id %>').val('');
+<% end %>

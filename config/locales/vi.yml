@@ -22,6 +22,8 @@ vi:
   language: "Ngôn ngữ"
   featured_cars: "Bài đăng mới"
   top_favorite: "Bài đăng được yêu thích trong tháng"
+  lower_price: "Giá thấp đến cao"
+  higher_price: "Giá cao đến thấp"
   layouts:
     header:
       car_list: "Danh sách xe"

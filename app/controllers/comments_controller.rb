@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = t ".comment_failed"
     end
-    redirect_back fallback_location: root_path
+    respond_to :js
   end
 
   def destroy

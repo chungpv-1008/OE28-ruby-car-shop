@@ -13,9 +13,19 @@
       </div>
       <div class="col-lg-9 col-xs-12">
         <div class="row">
-          <%= render @posts %>
+          <div class="col-md-offset-9 col-md-3">
+            <label><%= t "sort" %>:</label>
+            <%= select_tag :sort, options_for_select(Settings.sort_option),
+                {include_blank: true, class: "form-control", id: "sort"} %>
+          </div>
         </div>
-        <%= paginate @posts %>
+        <br>
+        <div id="post-index">
+          <div class="row">
+            <%= render @posts %>
+          </div>
+          <%= paginate @posts %>
+        </div>
       </div>
     </div>
   </div>

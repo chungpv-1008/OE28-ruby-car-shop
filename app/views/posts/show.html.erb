@@ -129,14 +129,14 @@
             </div>
             <div class="panel-body">
               <h3><%= t "comments.comments" %></h3>
-              <%= form_for [@post, Comment.new] do |f| %>
-                <%= f.text_area :content, placeholder: t("comments.add_a_comment"), class: "form-control" %><br>
+              <%= form_for [@post, Comment.new], remote: true do |f| %>
+                <%= f.text_area :content, placeholder: t("comments.add_a_comment"), id: "comment-text", class: "form-control", required: true %><br>
                 <%= f.submit t("comments.comments"), class: "btn btn-primary" %>
               <% end %>
               <br>
               <ul>
                 <div id="comment-panel">
-                  <%= render partial: "comments/comment", collection: @post.comments %>
+                  <%= render partial: "comments/comment", collection: @post.comments.by_created_at %>
                 </div>
               </ul>
             </div>

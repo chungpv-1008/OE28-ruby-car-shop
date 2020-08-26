@@ -16,8 +16,8 @@
   </div>
   <div class="form-group">
     <label><%= t "posts.new.car_type" %>:</label>
-    <%= select_tag :brand_id,
-      options_for_select(load_dropdown(CarType), selected: params[:brand_id]),
+    <%= select_tag :car_type_id,
+      options_for_select(load_dropdown(CarType), selected: params[:car_type_id]),
         {include_blank: true, class: "form-control"}
     %>
   </div>
