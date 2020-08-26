@@ -74,6 +74,14 @@ class Post < ApplicationRecord
 
   scope :by_activated, ->{where activated: true}
 
+  scope :by_favorite_count, (lambda do
+    left_joins(:favorite_lists).group(:id).order("COUNT(posts.id) DESC")
+  end)
+
+  scope :this_month, (lambda do
+    where "MONTH(favorite_lists.created_at) = ?", Time.zone.now.strftime("%m")
+  end)
+
   delegate :name, to: :user, prefix: true
   delegate :price, :image, :year_of_manufacture_name, :gearbox_name,
            :origin_name, :car_type_name, :brand_name, :car_model_name,

@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   include SessionsHelper
+
   layout "admins"
   before_action :require_admin
 

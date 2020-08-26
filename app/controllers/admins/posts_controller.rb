@@ -1,7 +1,7 @@
 class Admins::PostsController < AdminsController
   before_action :logged_in_user, only: %i(new create destroy)
   before_action :load_posts, only: :index
-  before_action :load_post, only: %i(update edit destroy)
+  before_action :load_post, only: %i(update edit destroy change_activated)
 
   def index
     @posts = load_posts.by_created_at.page(params[:page]).per Settings.page_ad
@@ -44,6 +44,12 @@ class Admins::PostsController < AdminsController
       flash[:danger] = t ".delete_failed"
     end
     redirect_to admins_root_path
+  end
+
+  def change_activated
+    @post.activated = !@post.activated
+    @post.save
+    respond_to :js
   end
 
   private

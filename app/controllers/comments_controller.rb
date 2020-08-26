@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 
   def load_commentable
     @commentable = Comment.find_by(id: params[:comment_id]) ||
-      Post.find_by(id: params[:post_id])
+                   Post.find_by(id: params[:post_id])
     return if @commentable
 
     flash[:danger] = t "posts.not_found_post"

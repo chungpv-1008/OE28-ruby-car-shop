@@ -21,6 +21,7 @@ en:
   please_log_in: "Please log in!"
   language: "Language"
   featured_cars: "Featured Car"
+  top_favorite: "Top Favorite Car This Month"
   layouts:
     header:
       car_list: "Car list"

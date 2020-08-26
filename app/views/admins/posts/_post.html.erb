@@ -5,7 +5,11 @@
   <td><%= post.car_car_type_name %></td>
   <td><%= post.created_at.strftime Settings.date_time_format %></td>
   <td><%= number_to_price post.car_price %></td>
-  <td><%= status_text post.activated %></td>
+  <td>
+    <%= button_tag id:"btn-activated-#{post.id}", class: "btn btn-primary btn-activated", post_id: "#{post.id}" do %>
+      <%= post_activated_text post.activated %>
+    <% end %>
+  </td>
   <td>
     <%= link_to edit_admins_post_path(post.id), class: "section-btn btn btn-primary btn-block" do %>
       <i class="fas fa-edit"></i> <%= t("edit") %>
